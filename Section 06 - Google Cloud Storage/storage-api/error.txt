@@ -1,0 +1,6 @@
+Error:
+self._service_account_email = info["email"]
+TypeError: string indices must be integers
+
+Solution:
+Add Service account JSON key file
