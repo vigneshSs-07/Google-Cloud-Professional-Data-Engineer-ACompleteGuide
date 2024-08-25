@@ -1,0 +1,36 @@
+main:
+    steps:
+    - init:
+        assign:
+          - searchTerm: ${sys.get_env("searchTerm")}
+
+    - loginit:
+        call: sys.log
+        args:
+            data: ${searchTerm}
+            severity: "INFO"
+
+    - getLocation:
+        call: sys.get_env
+        args:
+            name: GOOGLE_CLOUD_LOCATION
+        result: location
+
+    - logsetFromCallResult:
+        call: sys.log
+        args:
+            data: ${location}
+            severity: "WARNING"
+
+    - readWikipedia:
+        call: http.get
+        args:
+            url: 'https://en.wikipedia.org/w/api.php'
+            timeout: 200
+            query:
+                action: opensearch
+                search: '${searchTerm}'
+        result: wikiResult
+
+    - returnOutput:
+            return: '${wikiResult.body[1]}'
