@@ -24,7 +24,7 @@ We encourage you to actively participate in the course and leverage the resource
 
 🎉 You can Reach out 
 
-1. OFFICIAL WEBSITE [Cloud & AI Analytics](https://clouaianalytics.in)
+1. OFFICIAL WEBSITE [Cloud & AI Analytics](https://cloudaianalytics.in)
 
 2. SUBSCRIBE to my [YouTube channel](https://www.youtube.com/channel/UCyAnuvrJq_2JCnYm8atLE2w)
 
