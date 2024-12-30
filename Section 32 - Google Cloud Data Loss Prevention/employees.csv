@@ -1,0 +1,26 @@
+EMPLOYEE_ID,FIRST_NAME,LAST_NAME,EMAIL,PHONE_NUMBER,HIRE_DATE,JOB_ID,SALARY,COMMISSION_PCT,MANAGER_ID,DEPARTMENT_ID
+198,Donald,OConnell,DOCONNEL@cloudaianalytics.in,650.507.9833,21-JUN-07,SH_CLERK,2600, - ,124,50
+199,Douglas,Grant,DGRANT@cloudaianalytics.in,650.507.9844,13-JAN-08,SH_CLERK,2600, - ,124,50
+200,Jennifer,Whalen,JWHALEN@cloudaianalytics.in,515.123.4444,17-SEP-03,AD_ASST,4400, - ,101,10
+201,Michael,Hartstein,MHARTSTE@cloudaianalytics.in,515.123.5555,17-FEB-04,MK_MAN,13000, - ,100,20
+202,Pat,Fay,PFAY@cloudaianalytics.in,603.123.6666,17-AUG-05,MK_REP,6000, - ,201,20
+203,Susan,Mavris,SMAVRIS@cloudaianalytics.in,515.123.7777,07-JUN-02,HR_REP,6500, - ,101,40
+204,Hermann,Baer,HBAER@cloudaianalytics.in,515.123.8888,07-JUN-02,PR_REP,10000, - ,101,70
+205,Shelley,Higgins,SHIGGINS@cloudaianalytics.in,515.123.8080,07-JUN-02,AC_MGR,12008, - ,101,110
+206,William,Gietz,WGIETZ@cloudaianalytics.in,515.123.8181,07-JUN-02,AC_ACCOUNT,8300, - ,205,110
+100,Steven,King,SKING@cloudaianalytics.in,515.123.4567,17-JUN-03,AD_PRES,24000, - , - ,90
+101,Neena,Kochhar,NKOCHHAR@cloudaianalytics.in,515.123.4568,21-SEP-05,AD_VP,17000, - ,100,90
+102,Lex,De Haan,LDEHAAN@cloudaianalytics.in,515.123.4569,13-JAN-01,AD_VP,17000, - ,100,90
+103,Alexander,Hunold,AHUNOLD@cloudaianalytics.in,590.423.4567,03-JAN-06,IT_PROG,9000, - ,102,60
+104,Bruce,Ernst,BERNST@cloudaianalytics.in,590.423.4568,21-MAY-07,IT_PROG,6000, - ,103,60
+105,David,Austin,DAUSTIN@cloudaianalytics.in,590.423.4569,25-JUN-05,IT_PROG,4800, - ,103,60
+106,Valli,Pataballa,VPATABAL@cloudaianalytics.in,590.423.4560,05-FEB-06,IT_PROG,4800, - ,103,60
+1707,Diana,Lorentz,DLORENTZ@cloudaianalytics.in,590.423.5567,07-FEB-07,IT_PROG,4200, - ,103,60
+108,Nancy,Greenberg,NGREENBE@cloudaianalytics.in,515.124.4569,17-AUG-02,FI_MGR,12008, - ,101,100
+109,Daniel,Faviet,DFAVIET@cloudaianalytics.in,515.124.4169,16-AUG-02,FI_ACCOUNT,9000, - ,108,100
+110,John,Chen,JCHEN@cloudaianalytics.in,515.124.4269,28-SEP-05,FI_ACCOUNT,8200, - ,108,100
+111,Ismael,Sciarra,ISCIARRA@cloudaianalytics.in,515.124.4369,30-SEP-05,FI_ACCOUNT,7700, - ,108,100
+112,Jose Manuel,Urman,JMURMAN@cloudaianalytics.in,515.124.4469,07-MAR-06,FI_ACCOUNT,7800, - ,108,100
+113,Luis,Popp,LPOPP@cloudaianalytics.in,515.124.4567,07-DEC-07,FI_ACCOUNT,6900, - ,108,100
+114,Den,Raphaely,DRAPHEAL@cloudaianalytics.in,515.127.4561,07-DEC-02,PU_MAN,11000, - ,100,30
+115,Alexander,Khoo,AKHOO@cloudaianalytics.in,515.127.4562,18-MAY-03,PU_CLERK,3100, - ,114,30
