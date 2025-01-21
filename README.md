@@ -40,6 +40,6 @@ Let's work together to achieve your Google Cloud Data Engineer certification goa
 -----------------------------------------------------------------------------------------------------------------------
 
   <div class="footer">
-              copyright © 2023—2024 Cloud & AI Analytics. 
+              copyright © 2024—2025 Cloud & AI Analytics. 
                                       All rights reserved
           </div>
