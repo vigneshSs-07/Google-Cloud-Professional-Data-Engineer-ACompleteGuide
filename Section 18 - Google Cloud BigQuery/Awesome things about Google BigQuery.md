@@ -1,3 +1,15 @@
+>>> **PROFESSIONAL DATA ENGINEER** - *Google Cloud Platform*
+------------------------
+
+> TITLE: "Introduction to Google Cloud - Awesome things about BigQuery"
+> 
+> Author:
+  >- Name: "Vignesh Sekar"
+  >- Designation: "Multi Cloud Architect"
+  >- Tags: [Google Cloud, DataEngineer, Python, PySpark, SQL, BigData]
+
+-----------------------------------------------------------------------------------------------------------------------
+
 Born out of Dremel in 2012, Google BigQuery is a very unique analytics data warehousing service. BigQuery is often described as serverless, no-ops, seamlessly scalable, and fully managed. Since BigQuery truly has no equivalent, it bears mentioning some of the less obvious aspects of what makes BigQuery so amazing!
 
 **1. Encryption**
@@ -106,3 +118,10 @@ Some of BigQuery’s customers include [Spotify,](https://news.spotify.com/us/20
 Many of our customers pay nothing or just pennies or dollars per month - after all, you can have as many as 200,000 queries for $5. Many of our customers operate at Petabyte scale. Many of them get to this scale without ever talking to us! And some customers even reach XXX PB scale!
 
 
+-----------------------------------------------------------------------------------------------------------------------
+
+
+  <div class="footer">
+              copyright © 2022—2023 Cloud & AI Analytics. 
+                                      All rights reserved
+          </div>
