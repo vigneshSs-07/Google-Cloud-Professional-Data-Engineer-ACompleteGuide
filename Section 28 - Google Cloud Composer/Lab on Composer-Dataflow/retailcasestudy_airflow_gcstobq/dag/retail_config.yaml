@@ -1,0 +1,32 @@
+# Configuration for the Retail Sales GCS to BQ pipeline
+
+gcp_project_id: "myorg-cloudai-gcp1722"
+gcp_region: "us-central1"
+
+gcs_staging_bucket: "gs://my-first-bucket-demo-2025/"
+gcs_beam_script_path: "gs://us-central1-demo-composer3-12332f6b-bucket/scripts/gcs_to_bq_beam.py"
+gcs_input_file: "gs://my-first-bucket-demo-2025/sales_data.csv"
+gcs_error_output_prefix: "gs://my-first-bucket-demo-2025/errors/bad_records"
+
+bq_output_table_dataset: "retail_dataset"
+bq_output_table_name: "sales_summary_data"
+
+# BigQuery Table Schema
+bq_table_schema:
+  fields:
+    - name: 'product_name'
+      type: 'STRING'
+    - name: 'category'
+      type: 'STRING'
+    - name: 'quantity'
+      type: 'INTEGER'
+    - name: 'price'
+      type: 'FLOAT'
+    - name: 'customer_id'
+      type: 'STRING'
+    - name: 'store_id'
+      type: 'STRING'
+    - name: 'total_amount'
+      type: 'FLOAT'
+    - name: 'sales_category'
+      type: 'STRING'
