@@ -1,12 +1,12 @@
 # Configuration for the Retail Sales GCS to BQ pipeline
 
-gcp_project_id: "myorg-cloudai-gcp1722"
-gcp_region: "us-central1"
+gcp_project_id: "poised-team-467209-a1"
+gcp_region: "us-central1" 
 
-gcs_staging_bucket: "gs://my-first-bucket-demo-2025/"
-gcs_beam_script_path: "gs://us-central1-demo-composer3-12332f6b-bucket/scripts/gcs_to_bq_beam.py"
-gcs_input_file: "gs://my-first-bucket-demo-2025/sales_data.csv"
-gcs_error_output_prefix: "gs://my-first-bucket-demo-2025/errors/bad_records"
+gcs_staging_bucket: "gs://poised-team-467209-a1-data-bucket/"
+gcs_beam_script_path: "/home/airflow/gcs/data/gcs_to_bq_beam.py"
+gcs_input_file: "gs://poised-team-467209-a1-data-bucket/incoming/retail_data.csv"
+gcs_error_output_prefix: "gs://poised-team-467209-a1-data-bucket/errors/bad_records"
 
 bq_output_table_dataset: "retail_dataset"
 bq_output_table_name: "sales_summary_data"

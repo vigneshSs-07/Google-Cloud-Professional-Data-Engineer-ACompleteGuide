@@ -13,8 +13,7 @@ from airflow.operators.bash import BashOperator
 from airflow.utils.dates import days_ago
 
 # --- CONFIGURATION LOADING ---
-GCS_CONFIG_FILE_PATH = "gs://us-central1-gcstobq-df-pipe-d9fbe1b3-bucket/dags/retail_config.yaml"
-GCS_BEAM_SCRIPT_PATH = "gs://us-central1-gcstobq-df-pipe-d9fbe1b3-bucket/scripts/gcs_to_bq_beam.py"
+GCS_CONFIG_FILE_PATH = "gs://us-central1-demo-composer3--0736c962-bucket/dags/retail_config.yaml"
 
 def get_config_from_gcs(gcs_path: str) -> dict:
     """Downloads and parses a YAML configuration file from GCS."""
@@ -40,10 +39,11 @@ GCP_PROJECT_ID = config["gcp_project_id"]
 GCP_REGION = config["gcp_region"]
 GCS_STAGING_BUCKET = config["gcs_staging_bucket"]
 GCS_BEAM_SCRIPT_PATH = config["gcs_beam_script_path"]
+DATAFLOW_SA_EMAIL = f"composer-dataflow-sa@{GCP_PROJECT_ID}.iam.gserviceaccount.com"
 
 # Default arguments for the DAG
 default_args = {
-    "owner": "airflow",
+    "owner": "Cloud & AI Analytics",
     "start_date": days_ago(1),
     "retries": 1,
     "retry_delay": datetime.timedelta(minutes=5),
@@ -52,19 +52,21 @@ default_args = {
         "region": GCP_REGION,
         "staging_location": GCS_STAGING_BUCKET + "staging",
         "temp_location": GCS_STAGING_BUCKET + "temp",
+        "service_account_email": DATAFLOW_SA_EMAIL,
     },
 }
 
 with DAG(
     dag_id="retail_sales_gcs_to_bq",
     default_args=default_args,
-    schedule=None,
+    # Cron expression for 00:00 on July 17th every year.
+    schedule="0 0 17 7 *",
     catchup=False,
-    tags=["retail", "beam", "dataflow"],
+    tags=["Cloud & AI Analytics", "beam", "dataflow"],
     doc_md="""
-    ### Retail Beam Dataflow Pipeline
+    ### Cloud & AI Analytics Beam Dataflow Pipeline
 
-    This DAG runs a simple Apache Beam script on Google Cloud Dataflow.
+    This DAG runs a simple Apache Beam script on Google Cloud Dataflow, reading data from GCS bucket, implementing business logic via dataflow Python Beam SDK and writing the transaformed data to BigQuery.
     """,
 ) as dag:
     start_pipeline = EmptyOperator(
@@ -75,8 +77,6 @@ with DAG(
     # on the Airflow worker's local filesystem. A common practice is to place it
     # in the 'data' folder of your Composer bucket, which is mounted at
     # /home/airflow/gcs/data/.
-    # The DataFlowPythonOperator is generally preferred as it can directly use
-    # a script from a GCS path.
     run_beam_job_via_bash = BashOperator(
         task_id="run_beam_job_via_bash",
         bash_command=(
@@ -88,6 +88,7 @@ with DAG(
             f"--staging_location={GCS_STAGING_BUCKET}staging "
             f"--temp_location={GCS_STAGING_BUCKET}temp "
             f"--job_name=retail-gcs-to-bq-bash-{'{{ ds_nodash }}'} "
+            f"--service_account_email={DATAFLOW_SA_EMAIL} "
             f"--config_file={GCS_CONFIG_FILE_PATH}"
         )
     )
@@ -95,6 +96,5 @@ with DAG(
     end_pipeline = EmptyOperator(
         task_id="end_pipeline",
     )
-
 
     start_pipeline >> run_beam_job_via_bash >> end_pipeline

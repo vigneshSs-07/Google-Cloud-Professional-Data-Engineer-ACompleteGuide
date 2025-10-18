@@ -15,7 +15,7 @@ The pipeline performs the following steps:
     *   Writes the transformed, enriched data to a specified BigQuery table.
     *   Writes any parsing errors to a text file in GCS for later analysis.
 
-The entire process is triggered and managed by an Airflow DAG.
+The entire process is triggered and managed by an Airflow DAG. chmod +x gcloud_composer.sh 
 
 ## Components
 
